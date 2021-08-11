@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List File Systems</title>
+</head>
+<body>
+    <ul id="navigation">
+    {% for item in filelist %}
+        <li>{{ item.logical_path }} - {{ item.file_size }}, {{ item.checksum }} - {{ item.copies }} - {{ item.tags }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dedupe - Delete File</title>
+</head>
+<body>
+<h2>Really delete file {{ logical_path }} ??</h2>
+<form action='delyes' method='post'>
+<input type='hidden' name='logical_path' value='{{ logical_path }}'></input>
+<image width='33%' src='http://localhost:5000/img/{{ logical_path }}'></image>
+<table>
+	<tr>
+		<td><input type='submit' name='op' value='YES Delete!'></input></td>
+		<td><input type='submit' name='op' value='No'></input></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List File Systems</title>
+</head>
+<body>
+    <ul id="navigation">
+    {% for item in fsyslist %}
+        <li>{{ item.server_name }} - {{ item.is_tape }}, {{ item.is_primary }} - {{ item.root_dir }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

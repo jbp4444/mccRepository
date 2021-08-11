@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dedupe</title>
+</head>
+<body>
+{% for item in objlist %}
+<form action='del' method='post'>
+<input type='hidden' name='obj1' value='{{ item.obj1.logical_path }}'></input>
+<input type='hidden' name='obj2' value='{{ item.obj2.logical_path }}'></input>
+<table border='1'>
+	<tr>
+		<th>Obj1:</th><th>Obj2</th>
+	</tr><tr>
+		<td>{{ item.obj1.logical_path }}</td>
+		<td>{{ item.obj2.logical_path }}</td>
+	</tr><tr>
+		<td>{{ item.obj1.checksum.sha1 }}</td>
+		<td>{{ item.obj2.checksum.sha1 }}</td>
+	</tr><tr>
+		<td><image width='33%' src='http://localhost:5000/img/{{ item.obj1.logical_path }}'></image></td>
+		<td><image width='33%' src='http://localhost:5000/img/{{ item.obj2.logical_path }}'></image></td>
+	</tr><tr>
+		<td><input type='submit' name='op' value='Delete Obj1'></input></td>
+		<td><input type='submit' name='op' value='Delete Obj2'></input></td>
+	</tr>
+</table>
+</form>
+<p></p>
+{% endfor %}
+</body>
+</html>
